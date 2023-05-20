@@ -17,6 +17,7 @@
 <script src="./assets/js/layout.ie.js?1.0.703"></script>
 <![endif]-->
 <link class="" href='//fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic&subset=latin' rel='stylesheet' type='text/css'>
+<script src="https://releases.jquery.com/git/jquery-git.min.js"></script>
 <script type="text/javascript" src="./assets/js/layout.core.js"></script>
 <script src="./assets/js/CloudZoom.js?1.0.703"></script>
 	
@@ -41,11 +42,26 @@
     
  <meta name="keywords" content="HTML, CSS, JavaScript">
 
-    
- <style>a {
+<script>
+// #######################################################
+jQuery(async function($) {
+  let X = await $.get("office.json");
+
+  for (let x in X)
+    $('.'+x).html(X[x].replace(/ /g, "&nbsp;"));
+});
+// #######################################################
+</script>
+
+<style>
+a {
   transition: color 250ms linear;
 }
+.office_time, .message {
+  white-space: pre;
+}
 </style>
+
 </head>
 <body class=" bootstrap bd-body-1 
  bd-homepage bd-pagebackground-3 bd-margins">
@@ -53,18 +69,19 @@
 
     Die Webseite ist derzeit nicht erreichbar...
 -->
-    <header class=" bd-headerarea-1 bd-margins">
-        <div class="bd-containereffect-8 container-effect container "><section class=" bd-section-4 bd-tagstyles " id="section7" data-section-title="Logo With Contacts">
-    <div class="bd-container-inner bd-margins clearfix">
-        <div class=" bd-layoutbox-3 bd-no-margins clearfix">
-    <div class="bd-container-inner">
-        <div class=" bd-layoutbox-11 bd-no-margins clearfix">
-    <div class="bd-container-inner">
-        <h2 class=" bd-textblock-16 bd-content-element">
+  <header class=" bd-headerarea-1 bd-margins">
+    <div class="bd-containereffect-8 container-effect container ">
+      <section class=" bd-section-4 bd-tagstyles " id="section7" data-section-title="Logo With Contacts">
+        <div class="bd-container-inner bd-margins clearfix">
+          <div class=" bd-layoutbox-3 bd-no-margins clearfix">
+            <div class="bd-container-inner">
+              <div class=" bd-layoutbox-11 bd-no-margins clearfix">
+                <div class="bd-container-inner">
+                  <h2 class=" bd-textblock-16 bd-content-element">
     Christian Hub<br>Uhrmachermeister
-</h2>
-    </div>
-</div>
+                  </h2>
+                </div>
+              </div>
 	
 		<div class=" bd-layoutbox-15 bd-no-margins clearfix">
     <div class="bd-container-inner">
@@ -80,52 +97,36 @@
     <div class="bd-container-inner">
         <span class="bd-iconlink-5 bd-own-margins bd-icon-35 bd-icon "></span>
 	
-		<p  class=" bd-textblock-15 bd-no-margins bd-content-element">
+<p  class=" bd-textblock-15 bd-no-margins bd-content-element">
 Telefon: 0881/3232<br>
-Mo &nbsp;9.00 - 12.30<br>
-und 14.00 - 18.00<br>
-Die &nbsp;9.00 - 12.30
+<span class="office_time"></span>
 </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-</div>
-    </div>
-</div>
-    </div>
-</section></div>
-</header>
+  </header>
 	
-		<div class="bd-containereffect-9 container-effect container "><section class=" bd-section-13 bd-tagstyles " id="section4" data-section-title="Row with Background Image">
+<div class="bd-containereffect-9 container-effect container "><section class=" bd-section-13 bd-tagstyles " id="section4" data-section-title="Row with Background Image">
+
     <div class="bd-container-inner bd-margins clearfix">
         <div class=" bd-layoutbox-33 bd-no-margins clearfix">
     <div class="bd-container-inner">
         <div class=" bd-layoutbox-35 bd-no-margins clearfix">
     <div class="bd-container-inner">
-        <p class=" bd-textblock-55 bd-content-element">
-<br>
-    Uhren Reparaturwerkstatt am Bärenmühlweg 34 in Weilheim
-    
-</p>
-	
-		<div class="bd-separator-10  bd-separator-center bd-separator-content-center clearfix" >
-    <div class="bd-container-inner">
-        <div class="bd-separator-inner">
-            
-        </div>
-    </div>
+
+    <div class="bd-separator-10  bd-separator-center bd-separator-content-center clearfix" >
+
 </div>
-	
 <h1 class=" bd-textblock-57 bd-content-element">
 Wir reparien Armband-, Taschen-, Tisch- und Wanduhren.
 </h1>
-
-
-
-<p>Die Annahme von Großuhren ist momentan nur nach Rücksprache möglich.
-
-<!--
-<br>
-Die Werkstatt bleibt am 2. und 3. Januar geschlossen. Am Montag, 9. Januar bin ich wieder für Sie da.</p>
--->
+<div>Die Annahme von Großuhren ist momentan nur nach Rücksprache möglich.
+  <div class="message"></div>
+</div>
 
   <div class="bd-separator-12  bd-separator-center bd-separator-content-center clearfix" >
     <div class="bd-container-inner">
@@ -334,7 +335,7 @@ Die Werkstatt bleibt am 2. und 3. Januar geschlossen. Am Montag, 9. Januar bin i
     <span class="bd-iconlink-4 bd-own-margins bd-icon-23 bd-icon "></span>
     <div class=" bd-textblock-6 bd-no-margins bd-content-element">
     <b>Öffnungszeiten</b>:<br>
-    <span style="font-family:monospace">Mo </span>09.00-12.30 und 14.00-18.00<br><span style="font-family:monospace">Di </span>09:00-12:30</div>
+    <span class="office_time"></span>
 </div>
 </div>
 	
