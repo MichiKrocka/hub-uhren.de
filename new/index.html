@@ -13,7 +13,6 @@
 <script src="./assets/js/layout.ie.js?1.0.703"></script>
 <![endif]-->
 <!--
-<script src="https://releases.jquery.com/git/jquery-git.min.js"></script>
 <script type="text/javascript" src="./assets/js/layout.core.js"></script>
 <script src="./assets/js/CloudZoom.js?1.0.703"></script>
 <script src="./assets/js/script.js?1.0.703"></script>
@@ -35,20 +34,26 @@
   <meta name="copyright" content="Christian Hub, Uhrmachermeister">
   <meta name="keywords" content="HTML, CSS, JavaScript">
 
-  <link class="" href='//fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic&subset=latin' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic&subset=latin" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="css/awesome6/css/all.min.css">
 
   <script src="https://www.w3schools.com/lib/w3.js"></script> 
+  <script src="https://releases.jquery.com/git/jquery-git.min.js"></script>
   <script>
     // #####################################################
-/*
     jQuery(async function($) {
+//      $('#id_Map').attr('src', $('#id_Map').attr('src'));
       let X = await $.get("office.json");
 
-      for (let x in X)
-        $('.'+x).html(X[x].replace(/ /g, "&nbsp;"));
+      for (let x in X) {
+        let e = $('.'+x),
+            v = e.css("white-space") == "pre-line" ?
+            X[x].replace(/ /g, "&nbsp;") : X[x];
+            
+        e.html(v);
+      }
     });
-*/
     // #####################################################
   </script>
   
@@ -94,8 +99,8 @@ div.cell .text {
 .h-line {
   overflow: hidden;
   font-weight: bold;
-  font-size: 22px;
-  letter-spacing: 1px;
+  font-size: 24px;
+  letter-spacing: 2px;
 }
 .h-line:before,
 .h-line:after {
@@ -134,7 +139,13 @@ div.cell .text {
   padding: 0 0.1em 0 0.1em;
 }
 
-.open_time {
+.office {
+  line-height: 24px;
+  font-size: 16px;
+  color: #333333;
+  font-weight: 600;
+}
+.office_time {
   white-space: pre-line;
 }
 
@@ -156,10 +167,92 @@ a {
 h3 {
   font-size: 20px;
 }
+
+.header-row {
+  border-bottom: 3px solid #596499;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding:20px 20px 10px 20px;
+  color: #313754;
+  font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
+  line-height: 42px;
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.uhr-background {
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  height: 70vh;
+  background-position: center center;
+  background-image: url(img/uhr.jpg);
+  height: 50vh;
+  padding-top:20px;
+}
+.msg {
+  line-height: 42px;
+  letter-spacing: 1px;
+  font-size: 30px;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.msg-ext {
+  line-height: 42px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
 </style>
 </head>
 <body>
   <div class="w3-content" style="max-width:900px">
+
+    <div class="header-row w3-white w3-row">
+      <div class="w3-col l6 m8 w3-mobile">
+        <div class="header">
+          Christian Hub<br>Uhrmachermeister
+        </div>
+      </div>
+      <div class="w3-padding w3-col l3 m2 w3-mobile">
+        <table class="office w3-table" style="float:left" border="0">
+          <tr>
+            <td style="width:3em;white-space:nowrap;text-align:center">
+              <br>
+              <i class="fa-solid fa-phone fa-lg"></i>
+            </td>
+            <td style="white-space:nowrap">
+              +49 (0)881-3232<br>
+              <div class="office_time"></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="w3-padding w3-right w3-col l3 m4 w3-mobile">
+        <table class="office w3-table" style="float:right" border="0">
+          <tr>
+            <td style="width:3em;white-space:nowrap;text-align:center">
+              <br>
+              <i class="fa-solid fa-location-dot fa-lg"></i>
+            </td>
+            <td style="white-space:nowrap">Bärenmühlweg 34<br>82362 Weilheim</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="uhr-background w3-row">
+      <div class="msg w3-padding w3-text-white w3-col">
+        Wir reparien Armband-, Taschen-, Tisch- und Wanduhren.
+      </div>
+      <div class="message msg-ext w3-padding w3-text-white w3-col"></div>
+    </div>
 
     <div class="gray w3-container w3-row">
       <div class="w3-col w3-left" style="width:1em">&nbsp;</div>
@@ -169,7 +262,7 @@ h3 {
       </div>
     </div>
 
-    <div class="grid w3-white w3-border w3-row">
+    <div class="grid w3-row">
 
       <div class="w3-col l4 m12 w3-mobile w3-row">
         <div class="cell white middle w3-col l12 m6 w3-mobile">
@@ -262,39 +355,48 @@ h3 {
       </div>
       <div class="w3-padding-small w3-col l8 m12 w3-mobile">
         <h3>Uhren HUB</h3>
-        <table class="w3-contaner" style="height:100%">
+        <table class="office w3-table" style="height:100%" border="0">
           <tr>
-            <td><span class="w3-xxxlarge">&#9742;</span></td>
-            <td>+48(0)881-3232</td>
-            <td rowspan="4">
-              <iframe
-                width="425" height="350" frameborder="0"
-                scrolling="no" marginheight="0" marginwidth="0"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=11.152917444705965%2C47.83704245316623%2C11.155269742012026%2C47.838376539845&amp;layer=mapnik"
-                style="border: 1px solid black">
-              </iframe><br/><small><a href="https://www.openstreetmap.org/#map=19/47.83771/11.15409">Größere Karte anzeigen</a></small>
+            <td style="width:1%;white-space:nowrap;text-align:center">
+              <i class="fa-solid fa-phone"></i>
+            </td>
+            <td style="width:1%;white-space:nowrap">+49 (0)881-3232</td>
+            <td rowspan="4" class="w3-padding" style="height:100%">
+              <iframe id="id_Map"
+                wwidth="425" hheight="350"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=11.151133775711061%2C47.835420258373134%2C11.156948804855347%2C47.84006525354436&amp;layer=mapnik&amp;marker=47.837742807940124%2C11.154041290283203"
+                style="width: 100%;height:100%;border: 1px solid black">
+              </iframe>
             </td>
           </tr>
           <tr>
-              <td><span class="w3-xxlarge">&#x1F4CC;</span></td>
-              <td>Bärenmühlweg 34<br>82362 Weilheim</td>
+            <td style="width:1%;white-space:nowrap;text-align:center">
+              <i class="fa-solid fa-location-dot"></i>
+            </td>
+            <td style="width:1%;white-space:nowrap">Bärenmühlweg 34<br>82362 Weilheim</td>
           </tr>
           <tr>
-            <td><span class="w3-xxxlarge">&#9993;</span></td>
-            <td>
+            <td style="width:1%;white-space:nowrap;text-align:center">
+              <i class="fa-solid fa-envelope"></i>
+            </td>
+            <td style="width:1%;white-space:nowrap">
               <a href="mailto:info@hub-uhren.de">info@hub-uhren.de</a><br>
               <a href="https://www.hub-uhren.de">www.hub-uhren.de</a>
             </td>
           </tr>
           <tr>
-            <td><span class="w3-xxxlarge">&#x1F50D;</span></td>
-            <td>
+            <td style="width:1%;white-space:nowrap;text-align:center">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </td>
+            <td style="width:1%;white-space:nowrap">
               <b>Öffnunszeiten:</b>
-              <span class="open_time">
-                Mo  09.00 - 12.30
-                und 14.00 - 18.00
-                Di    09.00 - 12.30
-              </span>
+              <div class="office_time"></div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" class="w3-padding" style="text-align:right">
+              <small><a href="https://www.openstreetmap.org/?mlat=47.83774&amp;mlon=11.15404#map=17/47.83774/11.15404">Größere Karte anzeigen</a></small>
             </td>
           </tr>
         </table>
