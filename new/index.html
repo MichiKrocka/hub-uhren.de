@@ -1,25 +1,9 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="de">
 <head>
+  <title>Uhren Hub, Weilheim - Werkstatt Reparatur von Uhren aller Art</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--  
-  <link rel="stylesheet" href="./assets/css/bootstrap.css?1.0.703" media="screen" />
-  <script type="text/javascript" src="./assets/js/bootstrap.min.js?1.0.703"></script>
--->
-
-<!--[if lte IE 9]>
-<link rel="stylesheet" href="./assets/css/layout.ie.css?1.0.703">
-<script src="./assets/js/layout.ie.js?1.0.703"></script>
-<![endif]-->
-<!--
-<script type="text/javascript" src="./assets/js/layout.core.js"></script>
-<script src="./assets/js/CloudZoom.js?1.0.703"></script>
-<script src="./assets/js/script.js?1.0.703"></script>
-  <link rel="stylesheet" href="./assets/css/style.css?1.0.703">
--->  
-  <title>Uhren Hub, Weilheim - Werkstatt Reparatur von Uhren aller Art</title>
-  <meta charset="utf-8">
   <meta name="web_author" content="Michael Krocka" />
   <meta name="generated" content="2018.06.10" />
   <meta name="robots" content="INDEX, FOLLOW" />
@@ -37,15 +21,12 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic&subset=latin" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="css/awesome6/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
 
-  <script src="https://www.w3schools.com/lib/w3.js"></script> 
   <script src="https://releases.jquery.com/git/jquery-git.min.js"></script>
   <script>
     // #####################################################
-    const MAP = "https://www.openstreetmap.org/export/embed.html?bbox=11.151133775711061%2C47.835420258373134%2C11.156948804855347%2C47.84006525354436&amp;layer=mapnik&amp;marker=47.837742807940124%2C11.154041290283203";
-
     jQuery(async function($) {
-      //$('#id_Map').attr('src', MAP);
       let X = await $.get("office.json");
 
       for (let x in X) {
@@ -58,159 +39,7 @@
     });
     // #####################################################
   </script>
-  
 <style>
-body {
-  width:100%;
-  height:100%;
-  padding:0;
-  margin:0;
-  border:0;
-  color: #555555;
-  background-attachment: fixed;
-  background-repeat: repeat;
-  background-image: url(img/body.jpg);
-  background-position: top left;
-  font-family: Open Sans;
-}
-div.cell {
-  height:350px;
-  color: #555555;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
-}
-div.middle {
-  display: flex;
-  align-items: center;
-}
-div.cell .text {
-  padding:0 1em 0 1em;
-  font-size: 12px;
-}
-
-.white {
-  background-color: #f5f5f5;
-}
-.gray {
-  background-color: #bfbfbf;
-  padding:0.5em;
-}
-
-.h-line {
-  overflow: hidden;
-  font-weight: bold;
-  font-size: 24px;
-  letter-spacing: 2px;
-}
-.h-line:before,
-.h-line:after {
-  background-color: #FFF;
-  content: "";
-  display: inline-block;
-  height: 1px;
-  position: relative;
-  vertical-align: middle;
-  width: 50%;
-}
-.h-line:before {
-  right: 0.5em;
-  margin-left: -50%;
-}
-.h-line:after {
-  left: 0.5em;
-  margin-right: -50%;
-}
-
-.div-line {
-  margin: auto;
-  width: 10%;
-  height: 1px;
-  background-color: #555555;
-}
-
-.h2 {
-  display:inline-block;
-  width:100%;
-  line-height: 40px;
-  text-transform: uppercase;
-  font-size: 24px;
-  font-weight: 600;
-  text-align: center;
-  padding: 0 0.1em 0 0.1em;
-}
-
-.office {
-  line-height: 24px;
-  font-size: 16px;
-  color: #333333;
-  font-weight: 600;
-}
-.office_time {
-  white-space: pre-line;
-}
-
-div.reparatur {
-  background-image: url(img/reparatur.jpg);
-}
-div.baterie {
-  background-image: url(img/baterie.jpg);
-}
-div.uhren {
-  background-image: url(img/uhren.jpg);
-}
-
-a {
-  color: #253273;
-  text-decoration: none;
-}
-
-h3 {
-  font-size: 20px;
-}
-
-.header-row {
-  border-bottom: 3px solid #596499;
-}
-.header {
-  display: flex;
-  align-items: center;
-  padding:20px 20px 10px 20px;
-  color: #313754;
-  font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
-  line-height: 42px;
-  font-size: 30px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.uhr-background {
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-  height: 70vh;
-  background-position: center center;
-  background-image: url(img/uhr.jpg);
-  height: 50vh;
-  padding-top:20px;
-}
-.msg {
-  line-height: 42px;
-  letter-spacing: 1px;
-  font-size: 30px;
-  font-weight: 300;
-  text-transform: uppercase;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-.msg-ext {
-  line-height: 42px;
-  letter-spacing: 1px;
-  font-size: 18px;
-  font-weight: 400;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
-}
 </style>
 </head>
 <body>
@@ -368,7 +197,6 @@ h3 {
                 wwidth="425" hheight="350"
                 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                 src="//maps.google.com/maps?output=embed&q=Bärenmühlweg 34, 82362 Weilheim&z=14&t=m&hl=English"
-                ssrc="https://www.openstreetmap.org/export/embed.html?bbox=11.151133775711061%2C47.835420258373134%2C11.156948804855347%2C47.84006525354436&amp;layer=mapnik&amp;marker=47.837742807940124%2C11.154041290283203"
                 style="width: 100%;height:100%;border: 1px solid black">
               </iframe>
             </td>
@@ -395,11 +223,6 @@ h3 {
             <td style="width:1%;white-space:nowrap">
               <b>Öffnunszeiten:</b>
               <div class="office_time"></div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="3" class="w3-padding" style="text-align:right">
-              <small><a href="https://www.openstreetmap.org/?mlat=47.83774&amp;mlon=11.15404#map=17/47.83774/11.15404">Größere Karte anzeigen</a></small>
             </td>
           </tr>
         </table>
