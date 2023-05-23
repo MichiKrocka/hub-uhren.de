@@ -43,6 +43,7 @@
   <script>
     // #####################################################
     jQuery(async function($) {
+      $('body').hide();
 //      $('#id_Map').attr('src', $('#id_Map').attr('src'));
       let X = await $.get("office.json");
 
@@ -53,6 +54,7 @@
             
         e.html(v);
       }
+      $('body').show();
     });
     // #####################################################
   </script>
