@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+<head>
+  <title>Uhren Hub, Weilheim - Werkstatt Reparatur von Uhren aller Art</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="web_author" content="Michael Krocka" />
+  <meta name="generated" content="2018.06.10" />
+  <meta name="robots" content="INDEX, FOLLOW" />
+  <meta name="revisit-after" content="5 days" />
+  <meta name="distribution" content="global" />
+  <meta name="audience" content="Alle" />
+  <meta name="publisher" content="mundini webdesign" />
+  <meta name="author" content="Christian Hub">
+  <meta name="keywords" content="Uhr,Uhren,Reparatur,Weilheim,Uhren reparieren, Reparatur von Uhren,Batteriewechsel,Instandsetzung von Uhren">
+  <meta name="abstract"  content="Wir reparieren Uhren aller Art. Taschenuhren, Armbanduhren und Großuhren">
+  <meta name="description" content="Christian Hub Uhrmachermeister. Wir reparieren Uhren aller Art in unserer Meisterwerkstatt - ein Familienunternehmen in Weilheim.">
+  <meta name="copyright" content="Christian Hub, Uhrmachermeister">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="css/awesome6/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+
+  <script src="https://releases.jquery.com/git/jquery-git.min.js"></script>
+  <script>
+    // #####################################################
+    jQuery(async function($) {
+
+      $('button[name=save]').click(async ev => {
+        let data = {};
+
+        $('.data').each(function() {
+          data[this.name] = this.value;
+        });
+        $.post('/save', JSON.stringify(data), function(X) {
+          if (X === false)
+             alert("Falsche Daten!")
+          else {
+            for (let x in X)
+              $(`[name=${x}]`).val(X[x]);
+            alert("OK");
+          }
+        }, "json");
+      });
+
+      let X = await $.get("office.json");
+
+      for (let x in X)
+	$(`[name=${x}]`).val(X[x]);
+    });
+    // #####################################################
+  </script>
+<style>
+  textarea {
+    width:100%;
+    height:10em;
+  }
+  body {
+    padding:1em;
+  }
+</style>
+</head>
+<body>
+<h4>E-Mail</h4>
+<input class="data" type="email" name="email" required>
+<h4>Passwort</h4>
+<input class="data" type="password" name="pswd" required>
+<h3>Öffnungszeiten</h3>
+<textarea class="data" name="office_time"></textarea>
+<h3>Meldung</h3>
+<textarea class="data" name="message"></textarea>
+<button name="save">Speichern</button>
+</body>
+</html>
